@@ -47,8 +47,6 @@ models
   - songs
   - scores
 
-Go back over ... 
-  How jwts are currently being stored
 
 Directories
   - migrations - contains migration scripts to manage the versioning of the schema
@@ -56,3 +54,4 @@ Directories
 
 TODO 
   - Create mock sqllite database -> 
+  - How jwts are currently being stored --> keep out of database?
