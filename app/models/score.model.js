@@ -1,7 +1,7 @@
 module.exports = (sequelize, Sequelize) => {
-  const Song = sequelize.define('scores', {
+  const Score = sequelize.define('scores', {
     score: { type: Sequelize.INTEGER }
   })
-  return Song
+  return Score
 }
 
