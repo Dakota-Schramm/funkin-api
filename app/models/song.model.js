@@ -6,9 +6,7 @@ module.exports = (sequelize, Sequelize) => {
     //   primaryKey: true,
     //   type: Sequalize.INTEGER
     // },
-    songname: {
-      type: Sequelize.STRING
-    }
+    songname: { type: Sequelize.STRING }
   })
   return Song
 }

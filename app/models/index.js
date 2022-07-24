@@ -48,5 +48,4 @@ db.score.hasOne(db.song, {
 });
 db.song.belognsTo(db.score)
 
-
 module.exports = db
