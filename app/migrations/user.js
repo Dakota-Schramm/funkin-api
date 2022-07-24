@@ -8,6 +8,11 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
+      roleId: {
+        type: Sequelize.INTEGER,
+        foreignKey: true,
+        allowNull: false
+      },
       username: { type: Sequelize.STRING, allowNull: false },
       password: { type: Sequelize.STRING, allowNull: false },
     })
