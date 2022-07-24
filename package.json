@@ -1,0 +1,17 @@
+{
+  "name": "funkin-api",
+  "version": "1.0.0",
+  "description": "Express js app with database and auth",
+  "main": "index.js",
+  "repository": "git@github.com:Dakota-Schramm/funkin-api.git",
+  "author": "Dakota Schramm <william.schramm11@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "sequelize": "^6.21.3"
+  }
+}
