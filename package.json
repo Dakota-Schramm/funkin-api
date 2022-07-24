@@ -15,8 +15,7 @@
     "sequelize": "^6.21.3"
   },
   "scripts": {
-    "db-init": "migrate and seed",
+    "db-init": "sequelize db:seed:all",
     "start": "node server.js"
-    
   }
 }
