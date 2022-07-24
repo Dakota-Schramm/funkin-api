@@ -1,8 +1,9 @@
-export default {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+'use strict';
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Users', {
       userId: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
@@ -11,5 +12,7 @@ export default {
       password: { type: Sequelize.STRING, allowNull: false },
     })
   },
-  down: queryInterface => queryInterface.dropTable('Songs'),
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Users')
+  }
 }

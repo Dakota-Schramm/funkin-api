@@ -1,8 +1,9 @@
-export default {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Songs', {
+'use strict';
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Songs', {
       songId: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
@@ -11,6 +12,10 @@ export default {
         type: Sequelize.STRING
       },
     })
+
   },
-  down: queryInterface => queryInterface.dropTable('Songs'),
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Songs')
+  }
 }
+

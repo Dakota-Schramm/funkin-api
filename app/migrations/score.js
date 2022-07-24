@@ -1,19 +1,20 @@
-export default {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Scores', {
+'use strict';
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Scores', {
       scoreId: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
       userId: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         foreignKey: true,
         allowNull: false
       },
       songId: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         foreignKey: true,
         allowNull: false
       },
@@ -22,5 +23,8 @@ export default {
       },
     })
   },
-  down: queryInterface => queryInterface.dropTable('Scores'),
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Scores')
+  }
 }
+
