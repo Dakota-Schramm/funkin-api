@@ -47,7 +47,6 @@ db.user.hasMany(db.score, {
 db.score.belongsTo(db.user, {
   foreignKey: 'scoreId',
   otherKey: 'userId'
-
 })
 
 // Score - Song --- One to one
