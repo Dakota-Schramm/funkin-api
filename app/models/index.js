@@ -22,7 +22,6 @@ db.role = require('./role.model.js')(sequelize, Sequelize)
 db.song = require('./song.model.js')(sequelize, Sequelize)
 db.score = require('./score.model.js')(sequelize, Sequelize)
    
-
 /////
 // DB relations - assigns keys for relations
 /////
@@ -41,15 +40,24 @@ db.user.belongsToMany(db.role, {
 db.ROLES = ['user', 'admin'] // used for role checking middleware in verifySignUp
 
 // User - Score --- One to many
-db.user.hasMany(db.score)
-db.score.belongsTo(db.user)
+db.user.hasMany(db.score, {
+  foreignKey: 'userId',
+  otherKey: 'scoreId'
+})
+db.score.belongsTo(db.user, {
+  foreignKey: 'scoreId',
+  otherKey: 'userId'
+
+})
 
 // Score - Song --- One to one
 db.score.hasOne(db.song, {
-  foreignKey: {
-    allowNull: false
-  }
+  foreignKey: { name: 'scoreId', allowNull: false },
+  otherKey: 'songId'
 });
-db.song.belognsTo(db.score)
+db.song.belognsTo(db.score, {
+  foreignKey: 'songId',
+  otherKey: 'scoreId'
+})
 
 module.exports = db
