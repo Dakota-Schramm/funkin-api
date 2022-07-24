@@ -17,9 +17,12 @@ app.use(bodyParser.json())
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(require('./routes'));
-
-
+// routes
+app.get('/', (req, res) => {
+  res.json({ message: '3, 2, 1, go!' })
+})
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080
