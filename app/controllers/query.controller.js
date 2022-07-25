@@ -7,7 +7,7 @@ const Op = db.Sequelize.Op
 
 exports.allScores = async (req, res) => {
   const scores = await Score.findAll({
-    attributes: ['score', 'userId', 'scoreId']
+    attributes: ['score', 'userId', 'scoreId', 'songId']
   })
   res.status(200).send(scores)
 }
@@ -29,7 +29,7 @@ exports.allSongs = async (req, res) => {
 exports.scoresFromUsers = (req, res) => {
   Score.findAll({ 
     where: { userId: req.params.userid} ,
-    attributes: ['score', 'userId', 'scoreId']
+    attributes: ['score', 'userId', 'scoreId', 'songId']
   })
   .then(scores => res.status(200).send(scores))
   .catch(err => res.status(500).send({ message: err.message }) )
