@@ -20,7 +20,7 @@
     "migrate-db": "sequelize db:migrate --config ./app/config/db.config.json --seeders-path ./app/seeders --models-path ./app/models --migrations-path ./app/migrations",
     "seed-db": "sequelize db:seed:all --config ./app/config/db.config.json --seeders-path ./app/seeders --models-path ./app/models --migrations-path ./app/migrations",
     "db-init": "yarn migrate-db && yarn seed-db",
-    "start": "node ./app/server.js"
+    "start": "node server.js"
   },
   "devDependencies": {}
 }

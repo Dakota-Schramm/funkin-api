@@ -21,9 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   res.json({ message: '3, 2, 1, go!' })
 })
-require('./app/routes/auth.routes')(app);
-require('./app/routes/user.routes')(app);
-require('./app/routes/query.routes')
+app.use('/api/auth', require('./app/routes/auth.routes'));
+app.use('/api/test', require('./app/routes/user.routes'));
+app.use('/api/query', require('./app/routes/query.routes'));
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080
