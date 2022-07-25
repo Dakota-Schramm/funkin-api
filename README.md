@@ -5,13 +5,6 @@ An express app with authorization, authentication and a simple database.
 JWT Authentication Middleware: verify SignUp, verify token
 Authorization Middleware: check User’s roles with record in database
 
-With this api, you can view a general score list from players.
-  - Should allow for pagination of results 
-Api allows for login:
-  - players can login to service and upload new high scores if it beats their current account's saved score // TO BE IMPLEMENTED
-  - could implement an ability to upload scores from the application after a player logs in
-    - will ultimately depend on how well checked the scores are to prevent forged scores?
-
 Ultimately, the goal for this API would be to serve many concurrent users in a way that isn't resource intensive for the server. While this project uses SQLLite for a simple mock database, we would want to switch this to a database where we can pool connections. Depending on how complexity scales, it might also be beneficial to use something for caching.
 
 # INSTALL
@@ -27,6 +20,7 @@ GET
 – /api/test/all for public access
 – /api/test/user for loggedin users (role: user/moderator/admin)
 – /api/test/admin for users having admin role
+
 – /api/query/scores for all user high scores
 – /api/query/scores/:userid for specific user high scores
 – /api/query/users for all users
