@@ -1,4 +1,4 @@
-import config from '../config/db.config.json'
+var config = require('../config/db.config.json')
 const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize(config.development)

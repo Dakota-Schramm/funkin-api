@@ -23,10 +23,10 @@ const MOCK_USERS = [
 ]
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  async up(queryInterface, Sequelize) {
     return queryInterface.bulkInsert('Users', MOCK_USERS)
   },
-  down: (queryInterface, Sequelize) => {
+  async down(queryInterface, Sequelize) {
     return queryInterface.bulkDelete('Users', null, {})
   },
 }

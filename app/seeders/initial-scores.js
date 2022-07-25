@@ -1,4 +1,4 @@
-const MOCK_SCORES = () => {
+const CREATE_MOCK_SCORES = () => {
   let scores = [];
   for (let user=0; user<12; user++) {
     for (let song=0; song<21; song++) {
@@ -9,13 +9,16 @@ const MOCK_SCORES = () => {
       })
     }
   }
+  return scores
 }
 
+const MOCK_SCORES = CREATE_MOCK_SCORES();
+
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  async up(queryInterface, Sequelize) {
     return queryInterface.bulkInsert('Scores', MOCK_SCORES)
   },
-  down: (queryInterface, Sequelize) => {
+  async down(queryInterface, Sequelize) {
     return queryInterface.bulkDelete('Scores', null, {})
   },
 }
